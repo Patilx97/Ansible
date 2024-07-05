@@ -1,17 +1,17 @@
-
-- name: play one
-  hosts: lemp_server
-  become: true
+ 
+- name: play one # Define the name of the playbook
+  hosts: lemp_server # Specify the hosts to run the playbook on
+  become: true # Run tasks with sudo privileges
   tasks:
     - name: Update apt package index
       apt:
         update_cache: yes
         force_apt_get: yes
 
-    - name: nginx install
-      apt:
-        name: nginx
-        state: present
+    - name: nginx install # Task to install Nginx. This will prompted on terminal.
+      apt: # Package manager
+        name: nginx # Name of the package
+        state: present # Ensure the package is installed
 
     - name: nginx start
       service:
