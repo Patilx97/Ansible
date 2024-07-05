@@ -8,7 +8,7 @@
         update_cache: yes
         force_apt_get: yes
 
-    - name: nginx install # Task to install Nginx. This will prompted on terminal.
+    - name: nginx install # Task to install Nginx. This will be prompted on the terminal.
       apt: # Package manager
         name: nginx # Name of the package
         state: present # Ensure the package is installed
