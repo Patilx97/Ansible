@@ -1,10 +1,11 @@
-# Setting Up a LEMP Stack Using Ansible to remote server
+# Setting Up a LEMP Stack Using Ansible on remote server
 ## Introduction
 In this guide, we will walk through the steps to set up a LEMP stack (Linux, Nginx, MySQL, PHP) on a remote server using an Ansible playbook. Ansible is a powerful automation tool that allows you to manage and configure systems at scale.
 
-1. Create 2 EC2 UBUNTU Instances
-   a. Host instance
-   b. Target instance
+## Steps
+1. Create 2 EC2 Ubuntu Instances
+   ◦ Host instance
+   ◦ Target instance
 
 2. Connect to Host instance.
 3. Clone this repository and navigate to this "Automating_LEMP_Stack_Deployment_with_Ansible_on_AWS_EC2" directory.
