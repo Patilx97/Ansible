@@ -8,7 +8,7 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
    ◦ Target instance
 
 2. Connect to Host instance.
-3. Clone this repository and navigate to this "Automating_LEMP_Stack_Deployment_with_Ansible_on_AWS_EC2" directory.
+3. Clone the repository and navigate to the "Automating_LEMP_Stack_Deployment_with_Ansible_on_AWS_EC2" directory.
 
 ```plaintext
    Ansible
@@ -17,7 +17,7 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
         ├── README.md
         └── hosts.ini
 ```
-4. Now run the playbook (LEMP.yml) : 
+4. Run the playbook (LEMP.yml) : 
 ```bash
 ansible-playbook -i hosts.ini LEMP.yml
 ```
