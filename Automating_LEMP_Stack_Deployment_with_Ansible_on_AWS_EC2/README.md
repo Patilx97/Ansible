@@ -20,3 +20,4 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
 ```bash
 ansible-playbook -i hosts.ini LEMP.yml
 ```
+This command tells Ansible to use the **hosts.ini** inventory file and execute the tasks defined in the **LEMP.yml** playbook.
