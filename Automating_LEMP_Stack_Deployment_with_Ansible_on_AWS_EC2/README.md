@@ -17,7 +17,7 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
         ├── README.md
         └── hosts.ini
 ```
-There are the comments added in LEMP.yml & hosts.ini file uses of blocks.
+Comments have been added in the LEMP.yml and hosts.ini files explaining the use of each block.
 
 4. Run the playbook (LEMP.yml) : 
 ```bash
