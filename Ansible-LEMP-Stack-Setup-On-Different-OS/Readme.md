@@ -35,12 +35,13 @@ scp -i path_to_your_key.pem path_to_ubuntu.pem ubuntu@public_ip:/path_to_Ansible
 ```
 
 The directory structure should look like this:
-```plaintext
-Ansible
+```plaintextAnsible
  └── Ansible-LEMP-Stack-Setup-On-Different-OS
      ├── playbook.yml
      ├── README.md
-     └── hosts.ini
+     ├── hosts.ini
+     ├── amazon-linux.pem
+     └── ubuntu.pem
 ```
 Comments have been added in the playbook.yml and hosts.ini files explaining the use of each block.
 
