@@ -27,6 +27,6 @@ Comments have been added in the playbook.yml and hosts.ini files explaining the 
 
 5. Run the playbook (playbook.yml) : 
 ```bash
-ansible-playbook -i hosts.ini playbook.yml
+   ansible-playbook -i hosts.ini playbook.yml
 ```
 This command tells Ansible to use the **hosts.ini** inventory file and execute the tasks defined in the **playbook.yml** playbook.
