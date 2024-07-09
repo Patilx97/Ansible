@@ -6,7 +6,7 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
 1. Create two EC2 Instances
     Amazon linux
     Ubuntu  
-2. Install Ansible on Your System
+2. Install Ansible on Your System  
    If you are using a Linux system, install Ansible with the following command:
    
 ```bash
