@@ -12,7 +12,7 @@ If you are using a Linux system, install Ansible with the following command:
    
 ```bash
  sudo apt-get install ansible -y
- ```
+```
 
 3. Clone the Repository  
 Clone this repository and navigate to the Ansible-LEMP-Stack-Setup-On-Different-OS directory:
