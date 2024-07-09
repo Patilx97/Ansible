@@ -8,9 +8,9 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
     Ubuntu  
 2. Install Ansible on Your System
    If you are using a Linux system, install Ansible with the following command:
-   ```bash
-   sudo apt-get install ansible -y
-   ```
+```bash
+ sudo apt-get install ansible -y
+```
 4. Clone this repository and navigate to the "Ansible-LEMP-Stack-Setup-On-Different-OS" directory.
 
 ```plaintext
