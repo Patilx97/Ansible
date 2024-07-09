@@ -1,6 +1,6 @@
 - name: Installing LEMP on remote servers having multiple OS
-  hosts: webserver
-  become: true
+  hosts: webserver # Define the group of hosts where these tasks will be executed
+  become: true # Run tasks with elevated privileges (sudo)
   tasks:
     # Update package manager for Debian-based systems (e.g., Ubuntu)
     - name: update package manager
