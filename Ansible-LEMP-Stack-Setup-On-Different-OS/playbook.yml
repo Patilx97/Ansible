@@ -1,0 +1,60 @@
+- name: Installing LEMP on remote servers having different OS
+  hosts: webserver
+  become: true
+  tasks:
+    - name: update package manager
+      apt:
+       update_cache: yes
+       upgrade: dist
+      when: ansible_os_family=="Debian"
+
+    - name: update dnf
+      dnf:
+       name: '*'
+       state: latest
+      when: ansible_os_family=="RedHat"
+
+# Install and start services on UBUNTU
+
+    - name: install LEMP on ubuntu server
+      apt:
+       name: '{{ item }}'
+       state: present
+      loop:
+       - nginx
+       - php
+       - php8.3-fpm
+       - mysql-server
+      when: ansible_os_family=="Debian"
+
+    - name: start services on Ubuntu server
+      service:
+       name: '{{ item }}'
+       state: started
+      loop:
+       - nginx
+       - php8.3-fpm
+       - mysql
+      when: ansible_os_family=="Debian"
+
+# Install and start services on Amazon Linux
+
+    - name: install LEMP on Amazon Linux server
+      dnf:
+       name: '{{ item }}'
+       state: present
+      loop:
+       - nginx
+       - php
+       - mariadb105-server
+      when: ansible_os_family=="RedHat"
+
+    - name: start services on Amazon Linux server
+      service:
+       name: '{{ item }}'
+       state: started
+      loop:
+       - nginx
+       - php-fpm
+       - mariadb
+      when: ansible_os_family=="RedHat"
