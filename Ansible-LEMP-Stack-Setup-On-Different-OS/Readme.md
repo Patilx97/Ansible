@@ -20,7 +20,20 @@ Clone this repository and navigate to the Ansible-LEMP-Stack-Setup-On-Different-
  git clone <repository-url>
  cd Ansible/Ansible-LEMP-Stack-Setup-On-Different-OS/
 ```
- 
+
+4. Transfer the .pem Files
+Ensure that the .pem files for the Amazon Linux and Ubuntu servers are present in the same directory where the hosts.ini and playbook.yml files are located.  These files are necessary for SSH access to the respective servers.
+
+To transfer the .pem files from your local machine to the directory, use the scp command:
+
+```bash
+# Transfer the Amazon Linux .pem file
+scp -i path_to_your_key.pem path_to_amazon-linux.pem ec2-user@public_ip:/path_to_Ansible-LEMP-Stack-Setup-On-Different-OS/
+
+# Transfer the Ubuntu .pem file
+scp -i path_to_your_key.pem path_to_ubuntu.pem ubuntu@public_ip:/path_to_Ansible-LEMP-Stack-Setup-On-Different-OS/
+```
+
 The directory structure should look like this:
 ```plaintext
 Ansible
