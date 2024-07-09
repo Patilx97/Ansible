@@ -24,7 +24,7 @@ Clone this repository and navigate to the Ansible-LEMP-Stack-Setup-On-Different-
 The directory structure should look like this:
 ```plaintext
 Ansible
- └──Ansible-LEMP-Stack-Setup-On-Different-OS
+ └── Ansible-LEMP-Stack-Setup-On-Different-OS
     ├── playbook.yml
     ├── README.md
     └── hosts.ini
