@@ -1,0 +1,62 @@
+- name: Installing LEMP on remote servers having different OS
+  hosts: webserver
+  become: true
+  tasks:
+    # Update package manager for Debian-based systems (e.g., Ubuntu)
+    - name: update package manager
+      apt:
+        update_cache: yes
+        upgrade: dist
+      when: ansible_os_family == "Debian"  # Condition to run this task only on Debian-based systems
+
+    # Update package manager for RedHat-based systems (e.g., Amazon Linux)
+    - name: update dnf
+      dnf:
+        name: '*'
+        state: latest
+      when: ansible_os_family == "RedHat"  # Condition to run this task only on RedHat-based systems
+
+    # Install LEMP Stack on Ubuntu
+    - name: install LEMP on ubuntu server
+      apt:
+        name: '{{ item }}'
+        state: present
+      loop:
+        - nginx  # Install Nginx
+        - php  # Install PHP
+        - php8.3-fpm  # Install PHP-FPM
+        - mysql-server  # Install MySQL server
+      when: ansible_os_family == "Debian"  # Condition to run this task only on Debian-based systems
+
+    # Start the installed services on Ubuntu
+    - name: start services on Ubuntu server
+      service:
+        name: '{{ item }}'
+        state: started
+      loop:
+        - nginx  # Start Nginx
+        - php8.3-fpm  # Start PHP-FPM
+        - mysql  # Start MySQL
+      when: ansible_os_family == "Debian"  # Condition to run this task only on Debian-based systems
+
+    # Install LEMP Stack on Amazon Linux
+    - name: install LEMP on Amazon Linux server
+      dnf:
+        name: '{{ item }}'
+        state: present
+      loop:
+        - nginx  # Install Nginx
+        - php  # Install PHP
+        - mariadb105-server  # Install MariaDB server
+      when: ansible_os_family == "RedHat"  # Condition to run this task only on RedHat-based systems
+
+    # Start the installed services on Amazon Linux
+    - name: start services on Amazon Linux server
+      service:
+        name: '{{ item }}'
+        state: started
+      loop:
+        - nginx  # Start Nginx
+        - php-fpm  # Start PHP-FPM
+        - mariadb  # Start MariaDB
+      when: ansible_os_family == "RedHat"  # Condition to run this task only on RedHat-based systems
