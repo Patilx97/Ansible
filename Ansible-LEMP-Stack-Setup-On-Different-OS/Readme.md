@@ -1,4 +1,4 @@
-# Setting Up a LEMP Stack Using Ansible on Different OS
+# Automated Deployment of LEMP Stack Using Ansible on Multiple Operating Systems (Ubuntu and Amazon Linux)
 ## Introduction
 In this guide, we will walk through the steps to set up a LEMP stack (Linux, Nginx, MySQL, PHP) on a different OS using an Ansible playbook.  Ansible is a powerful automation tool that allows you to manage and configure systems at scale.
 
