@@ -2,59 +2,63 @@
   hosts: webserver
   become: true
   tasks:
+    # Update package manager for Debian-based systems (e.g., Ubuntu)
     - name: update package manager
       apt:
-       update_cache: yes
-       upgrade: dist
-      when: ansible_os_family=="Debian"
+        update_cache: yes
+        upgrade: dist
+      when: ansible_os_family == "Debian"
 
+    # Update package manager for RedHat-based systems (e.g., Amazon Linux)
     - name: update dnf
       dnf:
-       name: '*'
-       state: latest
-      when: ansible_os_family=="RedHat"
+        name: '*'
+        state: latest
+      when: ansible_os_family == "RedHat"
 
-# Install and start services on UBUNTU
-
+    # Install and start services on Ubuntu
+    # Install necessary packages for LEMP stack on Ubuntu
     - name: install LEMP on ubuntu server
       apt:
-       name: '{{ item }}'
-       state: present
+        name: '{{ item }}'
+        state: present
       loop:
-       - nginx
-       - php
-       - php8.3-fpm
-       - mysql-server
-      when: ansible_os_family=="Debian"
+        - nginx  # Install Nginx
+        - php  # Install PHP
+        - php8.3-fpm  # Install PHP-FPM
+        - mysql-server  # Install MySQL server
+      when: ansible_os_family == "Debian"
 
+    # Start the installed services on Ubuntu
     - name: start services on Ubuntu server
       service:
-       name: '{{ item }}'
-       state: started
+        name: '{{ item }}'
+        state: started
       loop:
-       - nginx
-       - php8.3-fpm
-       - mysql
-      when: ansible_os_family=="Debian"
+        - nginx  # Start Nginx
+        - php8.3-fpm  # Start PHP-FPM
+        - mysql  # Start MySQL
+      when: ansible_os_family == "Debian"
 
-# Install and start services on Amazon Linux
-
+    # Install and start services on Amazon Linux
+    # Install necessary packages for LEMP stack on Amazon Linux
     - name: install LEMP on Amazon Linux server
       dnf:
-       name: '{{ item }}'
-       state: present
+        name: '{{ item }}'
+        state: present
       loop:
-       - nginx
-       - php
-       - mariadb105-server
-      when: ansible_os_family=="RedHat"
+        - nginx  # Install Nginx
+        - php  # Install PHP
+        - mariadb105-server  # Install MariaDB server
+      when: ansible_os_family == "RedHat"
 
+    # Start the installed services on Amazon Linux
     - name: start services on Amazon Linux server
       service:
-       name: '{{ item }}'
-       state: started
+        name: '{{ item }}'
+        state: started
       loop:
-       - nginx
-       - php-fpm
-       - mariadb
-      when: ansible_os_family=="RedHat"
+        - nginx  # Start Nginx
+        - php-fpm  # Start PHP-FPM
+        - mariadb  # Start MariaDB
+      when: ansible_os_family == "RedHat"
