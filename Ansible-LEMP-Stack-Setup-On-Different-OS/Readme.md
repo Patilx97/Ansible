@@ -4,7 +4,7 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
 
 ## Steps
 1. Create 2 EC2 Instances - a. Amazon linux b. Ubuntu  
-   ◦ Host instance
+   ◦ Host instance  
    ◦ Target instance
 
 2. Connect to Host instance.
