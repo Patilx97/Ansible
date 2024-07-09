@@ -15,10 +15,10 @@ If you are using a Linux system, install Ansible with the following command:
 ```
 
 3. Clone the Repository  
-Clone this repository and navigate to the Ansible-LEMP-Stack-Setup-On-Different-OS directory:
+Clone this repository and navigate to the **Ansible-LEMP-Stack-Setup-MultiOS** directory:
 ```bash
  git clone <repository-url>
- cd Ansible/Ansible-LEMP-Stack-Setup-On-Different-OS/
+ cd Ansible/Ansible-LEMP-Stack-Setup-MultiOS/
 ```
 
 4. Transfer the .pem Files
@@ -28,15 +28,15 @@ To transfer the .pem files from your local machine to the directory, use the scp
 
 ```bash
 # Transfer the Amazon Linux .pem file
-scp -i path_to_your_key.pem path_to_amazon-linux.pem ec2-user@public_ip:/path_to_Ansible-LEMP-Stack-Setup-On-Different-OS/
+scp -i path_to_your_key.pem path_to_amazon-linux.pem ec2-user@public_ip:/path_to_Ansible-LEMP-Stack-Setup-MultiOS/
 
 # Transfer the Ubuntu .pem file
-scp -i path_to_your_key.pem path_to_ubuntu.pem ubuntu@public_ip:/path_to_Ansible-LEMP-Stack-Setup-On-Different-OS/
+scp -i path_to_your_key.pem path_to_ubuntu.pem ubuntu@public_ip:/path_to_Ansible-LEMP-Stack-Setup-MultiOS/
 ```
 
 The directory structure should look like this:
 ```plaintextAnsible
- └── Ansible-LEMP-Stack-Setup-On-Different-OS
+ └── Ansible-LEMP-Stack-Setup-MultiOS
      ├── playbook.yml
      ├── README.md
      ├── hosts.ini
