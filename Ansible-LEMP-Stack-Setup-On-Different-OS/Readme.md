@@ -25,9 +25,9 @@ The directory structure should look like this:
 ```plaintext
 Ansible
  └── Ansible-LEMP-Stack-Setup-On-Different-OS
-    ├── playbook.yml
-    ├── README.md
-    └── hosts.ini
+     ├── playbook.yml
+     ├── README.md
+     └── hosts.ini
 ```
 Comments have been added in the playbook.yml and hosts.ini files explaining the use of each block.
 
