@@ -1,4 +1,4 @@
-- name: Installing LEMP on remote servers having different OS
+- name: Installing LEMP on remote servers having multiple OS
   hosts: webserver
   become: true
   tasks:
