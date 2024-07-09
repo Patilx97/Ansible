@@ -3,8 +3,8 @@
 In this guide, we will walk through the steps to set up a LEMP stack (Linux, Nginx, MySQL, PHP) on a different OS using an Ansible playbook.  Ansible is a powerful automation tool that allows you to manage and configure systems at scale.
 
 ## Steps
-1. Create two EC2 Instances
-    Amazon linux
+1. Create two EC2 Instances  
+    Amazon linux  
     Ubuntu
    
 2. Install Ansible on Your System  
