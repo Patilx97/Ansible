@@ -52,7 +52,7 @@ Comments have been added in the playbook.yml and hosts.ini files explaining the 
 ```
 This command tells Ansible to use the **hosts.ini** inventory file and execute the tasks defined in the **playbook.yml** playbook.
 
-The output will look like this on terminal:
+## The output will look like this on terminal:
 
 ```bash
 PLAY [Installing LEMP on remote servers having different OS] ******************************************************************************************************
