@@ -10,28 +10,28 @@ In this guide, we will walk through the steps to set up a LEMP stack (Linux, Ngi
 2. Install Ansible on Your System  
    If you are using a Linux system, install Ansible with the following command:
    
-```bash
+   ```bash
    sudo apt-get install ansible -y
-```
+   ```
 
 3. Clone the Repository
    Clone this repository and navigate to the Ansible-LEMP-Stack-Setup-On-Different-OS directory:
    ```bash
-      git clone <repository-url>
-      cd Ansible-LEMP-Stack-Setup-On-Different-OS
+   git clone <repository-url>
+   cd Ansible-LEMP-Stack-Setup-On-Different-OS
    ```
    
-The directory structure should look like this:
-```plaintext
-        Ansible-LEMP-Stack-Setup-On-Different-OS
-        ├── playbook.yml
-        ├── README.md
-        └── hosts.ini
-```
-Comments have been added in the playbook.yml and hosts.ini files explaining the use of each block.
+  The directory structure should look like this:
+  ```plaintext
+  Ansible-LEMP-Stack-Setup-On-Different-OS
+  ├── playbook.yml
+  ├── README.md
+  └── hosts.ini
+  ```
+  Comments have been added in the playbook.yml and hosts.ini files explaining the use of each block.
 
-5. Run the playbook (playbook.yml) : 
-```bash
+5. Run the playbook (playbook.yml) :  
+   ```bash
    ansible-playbook -i hosts.ini playbook.yml
-```
-This command tells Ansible to use the **hosts.ini** inventory file and execute the tasks defined in the **playbook.yml** playbook.
+   ```
+   This command tells Ansible to use the **hosts.ini** inventory file and execute the tasks defined in the **playbook.yml** playbook.
