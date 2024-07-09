@@ -18,7 +18,7 @@ If you are using a Linux system, install Ansible with the following command:
 Clone this repository and navigate to the Ansible-LEMP-Stack-Setup-On-Different-OS directory:
 ```bash
  git clone <repository-url>
- cd Ansible-LEMP-Stack-Setup-On-Different-OS
+ cd Ansible/Ansible-LEMP-Stack-Setup-On-Different-OS/
 ```
  
 The directory structure should look like this:
