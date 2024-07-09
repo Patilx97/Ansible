@@ -20,7 +20,7 @@ Clone this repository and navigate to the Ansible-LEMP-Stack-Setup-On-Different-
  git clone <repository-url>
  cd Ansible-LEMP-Stack-Setup-On-Different-OS
 ```
-   
+ 
 The directory structure should look like this:
 ```plaintext
  Ansible-LEMP-Stack-Setup-On-Different-OS
@@ -30,7 +30,7 @@ The directory structure should look like this:
 ```
 Comments have been added in the playbook.yml and hosts.ini files explaining the use of each block.
 
-5. Run the playbook (playbook.yml) :  
+4. Run the playbook (playbook.yml) :  
 
 ```bash
  ansible-playbook -i hosts.ini playbook.yml
