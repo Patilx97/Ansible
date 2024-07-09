@@ -45,7 +45,7 @@ The directory structure should look like this:
 ```
 Comments have been added in the playbook.yml and hosts.ini files explaining the use of each block.
 
-4. Run the playbook (playbook.yml) :  
+4. Run the playbook  
 
 ```bash
  ansible-playbook -i hosts.ini playbook.yml
