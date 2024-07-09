@@ -51,3 +51,63 @@ Comments have been added in the playbook.yml and hosts.ini files explaining the 
  ansible-playbook -i hosts.ini playbook.yml
 ```
 This command tells Ansible to use the **hosts.ini** inventory file and execute the tasks defined in the **playbook.yml** playbook.
+
+The output will look like this on terminal:
+
+```bash
+PLAY [Installing LEMP on remote servers having different OS] ******************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************************************************************
+ok: [10.0.1.221]
+ok: [10.0.1.182]
+
+TASK [update package manager] *************************************************************************************************************************************
+skipping: [10.0.1.221]
+changed: [10.0.1.182]
+
+TASK [update dnf] *************************************************************************************************************************************************
+skipping: [10.0.1.182]
+ok: [10.0.1.221]
+
+TASK [install LEMP on ubuntu server] ******************************************************************************************************************************
+skipping: [10.0.1.221] => (item=nginx) 
+skipping: [10.0.1.221] => (item=php) 
+skipping: [10.0.1.221] => (item=php8.3-fpm) 
+skipping: [10.0.1.221] => (item=mysql-server) 
+skipping: [10.0.1.221]
+changed: [10.0.1.182] => (item=nginx)
+changed: [10.0.1.182] => (item=php)
+changed: [10.0.1.182] => (item=php8.3-fpm)
+changed: [10.0.1.182] => (item=mysql-server)
+
+TASK [start services on Ubuntu server] ****************************************************************************************************************************
+skipping: [10.0.1.221] => (item=nginx) 
+skipping: [10.0.1.221] => (item=php8.3-fpm) 
+skipping: [10.0.1.221] => (item=mysql) 
+skipping: [10.0.1.221]
+ok: [10.0.1.182] => (item=nginx)
+ok: [10.0.1.182] => (item=php8.3-fpm)
+ok: [10.0.1.182] => (item=mysql)
+
+TASK [install LEMP on Amazon Linux server] ************************************************************************************************************************
+skipping: [10.0.1.182] => (item=nginx) 
+skipping: [10.0.1.182] => (item=php) 
+skipping: [10.0.1.182] => (item=mariadb105-server) 
+skipping: [10.0.1.182]
+changed: [10.0.1.221] => (item=nginx)
+changed: [10.0.1.221] => (item=php)
+changed: [10.0.1.221] => (item=mariadb105-server)
+
+TASK [start services on Amazon Linux server] **********************************************************************************************************************
+skipping: [10.0.1.182] => (item=nginx) 
+skipping: [10.0.1.182] => (item=php-fpm) 
+skipping: [10.0.1.182] => (item=mariadb) 
+skipping: [10.0.1.182]
+changed: [10.0.1.221] => (item=nginx)
+ok: [10.0.1.221] => (item=php-fpm)
+changed: [10.0.1.221] => (item=mariadb)
+
+PLAY RECAP ********************************************************************************************************************************************************
+10.0.1.182                 : ok=4    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+10.0.1.221                 : ok=4    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+```
