@@ -16,8 +16,7 @@
         state: latest
       when: ansible_os_family == "RedHat"  # Condition to run this task only on RedHat-based systems
 
-    # Install and start services on Ubuntu
-    # Install necessary packages for LEMP stack on Ubuntu
+    # Install LEMP Stack on Ubuntu
     - name: install LEMP on ubuntu server
       apt:
         name: '{{ item }}'
@@ -40,8 +39,7 @@
         - mysql  # Start MySQL
       when: ansible_os_family == "Debian"  # Condition to run this task only on Debian-based systems
 
-    # Install and start services on Amazon Linux
-    # Install necessary packages for LEMP stack on Amazon Linux
+    # Install LEMP Stack on Amazon Linux
     - name: install LEMP on Amazon Linux server
       dnf:
         name: '{{ item }}'
