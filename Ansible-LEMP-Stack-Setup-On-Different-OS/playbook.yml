@@ -40,4 +40,25 @@
         - mysql  # Start MySQL
       when: ansible_os_family == "Debian"  # Condition to run this task only on Debian-based systems
 
-   
+    # Install and start services on Amazon Linux
+    # Install necessary packages for LEMP stack on Amazon Linux
+    - name: install LEMP on Amazon Linux server
+      dnf:
+        name: '{{ item }}'
+        state: present
+      loop:
+        - nginx  # Install Nginx
+        - php  # Install PHP
+        - mariadb105-server  # Install MariaDB server
+      when: ansible_os_family == "RedHat"  # Condition to run this task only on RedHat-based systems
+
+    # Start the installed services on Amazon Linux
+    - name: start services on Amazon Linux server
+      service:
+        name: '{{ item }}'
+        state: started
+      loop:
+        - nginx  # Start Nginx
+        - php-fpm  # Start PHP-FPM
+        - mariadb  # Start MariaDB
+      when: ansible_os_family == "RedHat"  # Condition to run this task only on RedHat-based systems
